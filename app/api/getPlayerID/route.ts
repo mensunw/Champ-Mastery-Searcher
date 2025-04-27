@@ -12,7 +12,7 @@ export async function GET(request: NextRequest) {
     const tag = searchParams.get('tag');
 
     // call api
-    const response = await fetch(`https://americas.api.riotgames.com/riot/account/v1/accounts/by-riot-id/portal/only2`, {
+    const response = await fetch(`https://americas.api.riotgames.com/riot/account/v1/accounts/by-riot-id/${name}/${tag}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
