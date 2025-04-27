@@ -24,7 +24,7 @@ Our goal was to create a fast, easy-to-use platform where players can quickly lo
 ## Team Contributions
 
 - **Mensun Wang**  
-  - Developed backend **API routes** to fetch player IDs and champion masteries.
+  - Developed backend **API routes** to fetch player IDs and champion masteries. Also added a CTA component
   - Handled integration with **Riot Games API**, including error handling for API responses.
 
 - **Jiale (Gerald) Quan**  
