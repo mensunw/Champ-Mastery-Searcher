@@ -5,6 +5,7 @@ import "./globals.css";
 import Link from "next/link";
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from "react";
+import styled from 'styled-components'; 
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,6 +16,33 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
+const MainContainer = styled.div`
+  min-height: 100vh;
+  background-color: #f9fafb;
+  display: flex;
+  flex-direction: column;
+`;
+
+const Navbar = styled.nav`
+  background-color: #1f2937; 
+  color: white;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const NavLinks = styled.div`
+  display: flex;
+  gap: 1.5rem;
+`;
+
+const NavLink = styled(Link)`
+  &:hover {
+    text-decoration: underline;
+  }
+`;
 
 export default function RootLayout({
   children,
@@ -42,23 +70,19 @@ export default function RootLayout({
         <title>{pageTitle}</title>
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <nav className="bg-gray-900 text-white px-6 py-4 flex justify-between items-center">
-          <Link href="/" className="text-xl font-bold">
-            {pageTitle}
-          </Link>
-          <div className="space-x-6">
-            <Link href="/" className="hover:underline">
-              Home
-            </Link>
-            <Link href="/about" className="hover:underline">
-              About
-            </Link>
-            <Link href="/search" className="hover:underline">
-              Search
-            </Link>
-          </div>
-        </nav>
-        <main className="p-6">{children}</main>
+        <MainContainer>
+          <Navbar>
+            <NavLink href="/" className="text-xl font-bold">
+              {pageTitle}
+            </NavLink>
+            <NavLinks>
+              <NavLink href="/">Home</NavLink>
+              <NavLink href="/about">About</NavLink>
+              <NavLink href="/search">Search</NavLink>
+            </NavLinks>
+          </Navbar>
+          <main className="p-6">{children}</main>
+        </MainContainer>
       </body>
     </html>
   );

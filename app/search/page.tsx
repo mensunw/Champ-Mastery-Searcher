@@ -1,6 +1,14 @@
 'use client';
 
 import { useState } from 'react';
+import styled from 'styled-components';
+
+const SearchContainer = styled.div`
+  background-color: #f9fafb;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+`;
 
 export default function SearchPage() {
   const [name, setName] = useState('');
@@ -35,48 +43,50 @@ export default function SearchPage() {
   };
 
   return (
-    <div className="max-w-xl mx-auto mt-10">
-      <h1 className="text-3xl font-bold mb-4 text-center">Search Champion Masteries</h1>
+    <div className="max-w-xl mx-auto mt-10 px-4">
+      <SearchContainer>
+        <h1 className="text-3xl font-bold mb-4 text-center">Search Champion Masteries</h1>
 
-      <form onSubmit={handleSearch} className="flex flex-col gap-4 mb-6">
-        <input
-          type="text"
-          placeholder="Summoner Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          required
-          className="p-2 border rounded"
-        />
-        <input
-          type="text"
-          placeholder="Tag (e.g. NA1)"
-          value={tag}
-          onChange={(e) => setTag(e.target.value)}
-          required
-          className="p-2 border rounded"
-        />
-        <button
-          type="submit"
-          className="bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
-          disabled={loading}
-        >
-          {loading ? 'Searching...' : 'Search'}
-        </button>
-      </form>
+        <form onSubmit={handleSearch} className="flex flex-col gap-4 mb-6">
+          <input
+            type="text"
+            placeholder="Summoner Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+            className="p-2 border rounded"
+          />
+          <input
+            type="text"
+            placeholder="Tag (e.g. NA01)"
+            value={tag}
+            onChange={(e) => setTag(e.target.value)}
+            required
+            className="p-2 border rounded"
+          />
+          <button
+            type="submit"
+            className="bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
+            disabled={loading}
+          >
+            {loading ? 'Searching...' : 'Search'}
+          </button>
+        </form>
 
-      {error && <p className="text-red-500 text-center">{error}</p>}
+        {error && <p className="text-red-500 text-center">{error}</p>}
 
-      {masteryData.length > 0 && (
-        <div className="space-y-3">
-          {masteryData.map((champ, i) => (
-            <div key={i} className="p-3 border rounded shadow">
-              <p><strong>Champion:</strong> {champ.championName}</p>
-              <p><strong>Level:</strong> {champ.championLevel}</p>
-              <p><strong>Points:</strong> {champ.championPoints.toLocaleString()}</p>
-            </div>
-          ))}
-        </div>
-      )}
+        {masteryData.length > 0 && (
+          <div className="space-y-3">
+            {masteryData.map((champ, i) => (
+              <div key={i} className="p-3 border rounded shadow">
+                <p><strong>Champion:</strong> {champ.championName}</p>
+                <p><strong>Level:</strong> {champ.championLevel}</p>
+                <p><strong>Points:</strong> {champ.championPoints.toLocaleString()}</p>
+              </div>
+            ))}
+          </div>
+        )}
+      </SearchContainer>
     </div>
   );
 }
