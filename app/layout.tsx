@@ -1,3 +1,5 @@
+// Jiale Quan
+
 'use client';
 
 import { Geist, Geist_Mono } from "next/font/google";
@@ -94,7 +96,7 @@ export default function RootLayout({
           <main className="p-6">{children}</main>
 
           <Footer>
-            © 2024 Champ Mastery Searcher. All rights reserved.
+            © 2025 Champ Mastery Searcher. All rights reserved.
           </Footer>
         </MainContainer>
       </body>
