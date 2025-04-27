@@ -4,7 +4,7 @@
 
 import { useState } from 'react';
 import styled from 'styled-components';
-import MasteryCard from '../components/MasteryCard'; 
+import MasteryCard from '../components/MasteryCard';
 
 const SearchContainer = styled.div`
   background-color: #f9fafb;
@@ -12,6 +12,16 @@ const SearchContainer = styled.div`
   border-radius: 1rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 `;
+
+const SearchButton = styled.button`
+  background-color: #c89c38;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+    &:hover {
+    background-color: #a67f2f;
+  }
+`
 
 export default function SearchPage() {
   const [name, setName] = useState('');
@@ -61,19 +71,19 @@ export default function SearchPage() {
           />
           <input
             type="text"
-            placeholder="Tag (e.g. NA01)"
+            placeholder="Tag (e.g. NA1)"
             value={tag}
             onChange={(e) => setTag(e.target.value)}
             required
             className="p-2 border rounded"
           />
-          <button
+          <SearchButton
             type="submit"
-            className="bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
+            //className="bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
             disabled={loading}
           >
             {loading ? 'Searching...' : 'Search'}
-          </button>
+          </SearchButton>
         </form>
 
         {error && <p className="text-red-500 text-center">{error}</p>}

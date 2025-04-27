@@ -7,7 +7,7 @@ import "./globals.css";
 import Link from "next/link";
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from "react";
-import styled from 'styled-components'; 
+import styled from 'styled-components';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -42,7 +42,7 @@ const NavLinks = styled.div`
 
 const NavLink = styled(Link)`
   &:hover {
-    text-decoration: underline;
+    color: #EEEEEE;
   }
 `;
 
