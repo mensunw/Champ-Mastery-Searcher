@@ -27,7 +27,7 @@ export default function HomePage() {
           just by entering a Riot ID and tag. No login or account linking needed.
         </p>
         <p className="text-lg mb-6">
-          The app connects to Riot’s public API to fetch mastery data and champion info.
+          The app connects to Riot&apos;s public API to fetch mastery data and champion info.
           We use Next.js for routing and API handling, combined with Tailwind CSS and styled-components for styling.
           Everything is lightweight, fast, and focused on ease of use.
         </p>
@@ -43,7 +43,7 @@ export default function HomePage() {
         </div>
 
         <p className="text-lg">
-          Whether you're checking your mains or comparing stats with friends,
+          Whether you&apos;re checking your mains or comparing stats with friends,
           Champ Mastery Searcher makes it quick and easy.
           Just click <span className="font-semibold">Search</span> above to get started!
         </p>

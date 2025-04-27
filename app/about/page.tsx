@@ -18,8 +18,8 @@ export default function AboutPage() {
         <h1 className="text-4xl font-bold mb-6 text-center">About This Project</h1>
 
         <p className="text-lg mb-6 text-center">
-          This project was developed as the Final Project for BU's CS391 course (Spring 2025).
-          It is a web application that allows users to search and view League of Legends champion mastery data 
+          This project was developed as the Final Project for BU&apos;s CS391 course (Spring 2025).
+          It is a web application that allows users to search and view League of Legends champion mastery data
           by entering a summoner name and tag.
         </p>
 

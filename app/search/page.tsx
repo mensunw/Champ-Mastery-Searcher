@@ -5,6 +5,7 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 import MasteryCard from '../components/MasteryCard';
+import { ChampionMastery } from '@/types/types';
 
 const SearchContainer = styled.div`
   background-color: #f9fafb;
@@ -28,7 +29,7 @@ export default function SearchPage() {
   const [tag, setTag] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
-  const [masteryData, setMasteryData] = useState<any[]>([]);
+  const [masteryData, setMasteryData] = useState<ChampionMastery[]>([]);
 
   const handleSearch = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -48,8 +49,12 @@ export default function SearchPage() {
 
       const { masteryData } = await res2.json();
       setMasteryData(masteryData);
-    } catch (err: any) {
-      setError(err.message);
+    } catch (err) {
+      if (err instanceof Error) {
+        setError(err.message);
+      } else {
+        setError("An unexpected error has occurred");
+      }
     } finally {
       setLoading(false);
     }
