@@ -19,13 +19,13 @@ const geistMono = Geist_Mono({
 
 const MainContainer = styled.div`
   min-height: 100vh;
-  background-color: #f9fafb;
   display: flex;
   flex-direction: column;
+  background-color: #f9fafb;
 `;
 
 const Navbar = styled.nav`
-  background-color: #1f2937; 
+  background-color: #1f2937;
   color: white;
   padding: 1rem 1.5rem;
   display: flex;
@@ -42,6 +42,15 @@ const NavLink = styled(Link)`
   &:hover {
     text-decoration: underline;
   }
+`;
+
+const Footer = styled.footer`
+  margin-top: auto;
+  background-color: #f1f5f9;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.875rem;
+  color: #64748b;
 `;
 
 export default function RootLayout({
@@ -81,7 +90,12 @@ export default function RootLayout({
               <NavLink href="/search">Search</NavLink>
             </NavLinks>
           </Navbar>
+
           <main className="p-6">{children}</main>
+
+          <Footer>
+            © 2024 Champ Mastery Searcher. All rights reserved.
+          </Footer>
         </MainContainer>
       </body>
     </html>

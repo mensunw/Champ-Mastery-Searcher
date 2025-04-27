@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import styled from 'styled-components';
+import MasteryCard from '../components/MasteryCard'; 
 
 const SearchContainer = styled.div`
   background-color: #f9fafb;
@@ -78,11 +79,12 @@ export default function SearchPage() {
         {masteryData.length > 0 && (
           <div className="space-y-3">
             {masteryData.map((champ, i) => (
-              <div key={i} className="p-3 border rounded shadow">
-                <p><strong>Champion:</strong> {champ.championName}</p>
-                <p><strong>Level:</strong> {champ.championLevel}</p>
-                <p><strong>Points:</strong> {champ.championPoints.toLocaleString()}</p>
-              </div>
+              <MasteryCard
+                key={i}
+                championName={champ.championName}
+                championLevel={champ.championLevel}
+                championPoints={champ.championPoints}
+              />
             ))}
           </div>
         )}

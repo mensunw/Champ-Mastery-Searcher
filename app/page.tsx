@@ -19,11 +19,17 @@ export default function HomePage() {
           Welcome to Champ Mastery Searcher
         </h1>
         <p className="text-lg mb-6">
-          Discover and explore your League of Legends champion masteries easily and quickly.
-          Search by summoner name and tag, and view detailed champion stats in seconds.
+          Champ Mastery Searcher is a simple web app we built for our CS391 final project.
+          It lets players quickly check their top champion masteries in League of Legends,
+          just by entering a Riot ID and tag. No login or account linking needed.
+        </p>
+        <p className="text-lg mb-6">
+          The app connects to Riot’s public API to fetch mastery data and champion info.
+          We use Next.js for routing and API handling, combined with Tailwind CSS and styled-components for styling.
+          Everything is lightweight, fast, and focused on ease of use.
         </p>
 
-        <div className="flex justify-center">
+        <div className="flex justify-center my-6">
           <Image 
             src="/lolicon.svg.png" 
             alt="League of Legends Logo"
@@ -32,11 +38,17 @@ export default function HomePage() {
             className="rounded-lg shadow-md"
           />
         </div>
+
+        <p className="text-lg">
+          Whether you're checking your mains or comparing stats with friends, 
+          Champ Mastery Searcher makes it quick and easy. 
+          Just click <span className="font-semibold">Search</span> above to get started!
+        </p>
       </HeroSection>
 
       <div className="mt-10 text-center">
-        <p className="text-lg">
-          Ready to get started? Click on <span className="font-semibold">Search</span> in the navigation bar above!
+        <p className="text-lg text-gray-600">
+          Built by Mensun Wang, Jiale (Gerald) Quan, and Jiaqing (Kevin) Xu.
         </p>
       </div>
     </div>
