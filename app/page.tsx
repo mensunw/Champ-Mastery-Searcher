@@ -1,10 +1,11 @@
-// Jiaqing Xu
+// Jiaqing Xu and Mensun Wang (CTA button)
 // HomePage.tsx - Displays landing page content and project introduction
 
 'use client';
 
 import Image from 'next/image';
 import styled from 'styled-components';
+import CallToAction from '@/app/components/CallToAction';
 
 //background and shadow
 const HeroSection = styled.div`
@@ -41,8 +42,8 @@ export default function HomePage() {
 
         {/* League of Legends branding image */}
         <div className="flex justify-center my-6">
-          <Image 
-            src="/lolicon.svg.png" 
+          <Image
+            src="/lolicon.svg.png"
             alt="League of Legends Logo"
             width={400}
             height={200}
@@ -52,11 +53,14 @@ export default function HomePage() {
 
         {/* Closing call-to-action */}
         <p className="text-lg">
-          Whether you're checking your mains or comparing stats with friends, 
-          Champ Mastery Searcher makes it quick and easy. 
-          Just click <span className="font-semibold">Search</span> above to get started!
+          Whether you&apos;re checking your mains or comparing stats with friends,
+          Champ Mastery Searcher makes it quick and easy.
+          Just click <span className="font-semibold">Search</span> below to get started!
         </p>
       </HeroSection>
+
+      {/* displays CTA button  */}
+      <CallToAction />
 
       {/* Team credit */}
       <div className="mt-10 text-center">
