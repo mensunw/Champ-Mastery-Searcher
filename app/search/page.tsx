@@ -81,7 +81,7 @@ export default function SearchPage() {
         <form onSubmit={handleSearch} className="flex flex-col gap-4 mb-6">
           <input
             type="text"
-            placeholder="Summoner Name"
+            placeholder="Summoner Name (e.g. portal)"
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
@@ -89,7 +89,7 @@ export default function SearchPage() {
           />
           <input
             type="text"
-            placeholder="Tag (e.g. NA01)"
+            placeholder="Tag (e.g. only2)"
             value={tag}
             onChange={(e) => setTag(e.target.value)}
             required
