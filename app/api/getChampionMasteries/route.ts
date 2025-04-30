@@ -1,4 +1,5 @@
 // Mensun Wang
+// Uses Riot Game's API in order to get the player's list of champion mastery objects
 "use server"
 import { NextResponse, NextRequest } from 'next/server';
 import { champNameMap } from '@/data/champ_mapping';

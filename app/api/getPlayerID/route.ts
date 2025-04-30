@@ -1,4 +1,6 @@
 // Mensun Wang
+// Uses Riot Game's API in order to get a player's ID based on their name and tag. This ID will be needed later for getting champion masteries
+
 "use server"
 import { NextResponse, NextRequest } from 'next/server';
 

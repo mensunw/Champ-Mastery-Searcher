@@ -1,4 +1,6 @@
 // Mensun Wang
+// CallToAction.tsx - Provides a CTA button for users on the home page
+
 'use client';
 import styled from 'styled-components';
 import Link from 'next/link'
