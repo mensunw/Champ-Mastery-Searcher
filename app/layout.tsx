@@ -1,4 +1,5 @@
 // Jiale Quan
+// layout.tsx - Root layout component for entire app (NavBar, Footer, PageWrapper)
 
 'use client';
 
@@ -9,6 +10,7 @@ import { usePathname } from 'next/navigation';
 import { useEffect, useState } from "react";
 import styled from 'styled-components';
 
+// Import custom Google fonts (Geist) for consistent typography
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -19,6 +21,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+// Main container that wraps entire page structure and ensures full-height layout
 const MainContainer = styled.div`
   min-height: 100vh;
   display: flex;
@@ -26,6 +29,7 @@ const MainContainer = styled.div`
   background-color: #f9fafb;
 `;
 
+// Top navigation bar with dark background and horizontal link layout
 const Navbar = styled.nav`
   background-color: #1f2937;
   color: white;
@@ -35,17 +39,20 @@ const Navbar = styled.nav`
   align-items: center;
 `;
 
+// Container for nav links on the right side
 const NavLinks = styled.div`
   display: flex;
   gap: 1.5rem;
 `;
 
+// Individual link style with hover effect
 const NavLink = styled(Link)`
   &:hover {
     color: #EEEEEE;
   }
 `;
 
+// Footer section pinned to bottom of page
 const Footer = styled.footer`
   margin-top: auto;
   background-color: #f1f5f9;
@@ -55,14 +62,16 @@ const Footer = styled.footer`
   color: #64748b;
 `;
 
+// Root layout component wraps all pages with NavBar and Footer
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const pathname = usePathname();
+  const pathname = usePathname(); // Get current route path
   const [pageTitle, setPageTitle] = useState('Champ Mastery Searcher');
 
+  // Dynamically update the document title based on route
   useEffect(() => {
     if (pathname === '/') {
       setPageTitle('Champ Mastery Searcher');
@@ -78,10 +87,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Dynamically set page title */}
         <title>{pageTitle}</title>
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <MainContainer>
+          {/* Top nav bar with page title and links */}
           <Navbar>
             <NavLink href="/" className="text-xl font-bold">
               {pageTitle}
@@ -93,8 +104,10 @@ export default function RootLayout({
             </NavLinks>
           </Navbar>
 
+          {/* Page content will render here */}
           <main className="p-6">{children}</main>
 
+          {/* Global footer */}
           <Footer>
             © 2025 Champ Mastery Searcher. All rights reserved.
           </Footer>
